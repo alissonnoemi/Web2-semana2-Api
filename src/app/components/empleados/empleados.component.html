@@ -1,0 +1,30 @@
+<div class="relative overflow-x-auto p-6 bg-gradient-to-br from-pink-100 to-pink-300 rounded-xl shadow-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-black rounded-lg overflow-hidden shadow-md bg-pink-50">
+    <thead class="text-xs text-black uppercase bg-pink-200">
+      <tr>
+        <th scope="col" class="px-6 py-4">Nombre</th>
+        <th scope="col" class="px-6 py-4">Género</th>
+        <th scope="col" class="px-6 py-4">Estado</th>
+        <th scope="col" class="px-6 py-4">Especie</th>
+        <th scope="col" class="px-6 py-4">Foto</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (empleado of empleados; track $index) {
+        <tr class="bg-white border-b border-pink-200 hover:bg-pink-100 transition-colors duration-200">
+          <td class="px-6 py-4 font-semibold">{{empleado.name}}</td>
+          <td class="px-6 py-4">{{empleado.gender}}</td>
+          <td class="px-6 py-4">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold {{empleado.status === 'Alive' ? 'bg-pink-300 text-pink-900' : (empleado.status === 'Dead' ? 'bg-pink-500 text-white' : 'bg-pink-200 text-pink-800')}}">
+              {{empleado.status}}
+            </span>
+          </td>
+          <td class="px-6 py-4">{{empleado.species}}</td>
+          <td class="px-6 py-4">
+            <img src="{{empleado.image}}" alt="foto empleado" class="w-16 h-16 rounded-full border-2 border-pink-400 shadow-md object-cover mx-auto" />
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

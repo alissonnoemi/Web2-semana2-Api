@@ -10,5 +10,5 @@ import { ListaClientesComponent } from "../../components/lista-clientes/lista-cl
   styleUrl: './clientes.component.css'
 })
 export class ClientesComponent {
-
+  
 }

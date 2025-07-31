@@ -10,6 +10,12 @@
           <p class="font-bold text-2xl text-pink-700 mb-3">{{cliente.nombre}}</p>
           <p class="text-black mb-2 text-lg whitespace-pre-line"><span class="font-semibold text-pink-500">Dirección:</span> {{cliente.direccion}}</p>
           <p class="text-black mb-2 text-lg break-all"><span class="font-semibold text-pink-500">Correo:</span> {{cliente.correo}}</p>
+          <td class="px-6 py-4">
+                    <button [routerLink]="['/clientes', cliente.id]">Editar</button>
+                </td>
+          <td class="px-6 py-4">
+                    <button (click)="eliminar(cliente.id)">Eliminar</button>
+                </td>
         </div>
       </li>
     }

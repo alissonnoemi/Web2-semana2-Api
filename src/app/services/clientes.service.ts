@@ -16,4 +16,15 @@ export class ClientesService {
     return this.http.get<any>(`${this.API_CLIENTES}/clientes.json`);
 
   }
+  
+  buscarClienteById(id: string): Observable<any> {
+    return this.http.get(`${this.API_CLIENTES}/clientes/${id}.json`);
+  }
+
+  eliminarCliente(id: string): Observable<any> {
+    return this.http.delete(`${this.API_CLIENTES}/clientes/${id}.json`);
+  }
+  editarCliente(id: string, cliente: any): Observable<any> {
+    return this.http.put(`${this.API_CLIENTES}/clientes/${id}.json`, cliente);
+  }
 }

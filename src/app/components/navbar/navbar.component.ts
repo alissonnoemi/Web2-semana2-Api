@@ -10,7 +10,7 @@ import { AutenticacionService } from '../../services/autenticacion.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor(private authServicio: AutenticacionService, private router: Router) {}
+  constructor(public authServicio: AutenticacionService, private router: Router) {}
   logout() {
     const redireccion = localStorage.getItem('redirectUrl') || '/home';
     localStorage.removeItem('redirecUrl');
